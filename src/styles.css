@@ -1,0 +1,94 @@
+:root {
+  --main-bg-clr: rgb(116, 116, 116);
+  --main-light-clr: aliceblue;
+  --main-dark-clr: rgb(26, 26, 26);
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  width: 100%;
+  font-family: sans-serif;
+  background-color: var(--main-bg-clr);
+  padding: 0 25px;
+  /* overflow: hidden; */
+}
+
+h1, #restart {
+  margin: 25px auto 10px;
+  padding: 15px;
+  background-color: coral;
+  color: aliceblue;
+  border: 3px solid var(--main-dark-clr);
+  box-shadow: 0 0 15px 5px var(--main-dark-clr);
+  text-align: center;
+  max-width: 750px;
+  letter-spacing: 0.1rem;
+  text-shadow: 5px 5px 5px var(--main-dark-clr);
+}
+.main {
+  display: flex;
+  flex-direction: column;
+  place-content: center;
+}
+/* Styles for the game board */
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-gap: 5px;
+  font-size: 2em;
+  text-align: center;
+  margin: 0 auto;
+  width: 350px;
+  height: 350px;
+  background: var(--main-light-clr);
+  padding: 5px;
+}
+.cell {
+  background-color: var(--main-dark-clr);
+  color: coral;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 65px;
+  font-weight: 900;
+  cursor: pointer;
+  border-radius: 10px;
+}
+/* Styles for the game result message */
+.display {
+  font-size: 1.5em;
+  text-align: center;
+  margin: 45px auto;
+  padding: 15px;
+  width: 300px;
+  color: var(--main-light-clr);
+  border: 5px solid coral;
+  box-shadow: inset 0 0 15px coral;
+  text-shadow: 5px 5px 5px var(--main-dark-clr);
+  letter-spacing: 0.1rem;
+}
+
+#restart {
+  min-width: 150px;
+  font-size: 1.5em;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+#restart:active {
+  transform: scale(.9);
+  transition: all 150ms ease;
+  box-shadow: none;
+  border: 2px solid black;
+}
+.hidden {
+  /* display: none; */
+  visibility: hidden;
+}
