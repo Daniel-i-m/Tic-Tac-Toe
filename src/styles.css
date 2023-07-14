@@ -18,7 +18,64 @@ body {
   /* overflow: hidden; */
 }
 
-h1, #restart {
+.btn {
+  min-width: 150px;
+  font-size: 1.5em;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 25px;
+}
+/* *********** STARTING DIV / CONTENTS */
+#starter input {
+  outline: none;
+  max-width: 150px;
+  margin: auto;
+  border: none;
+  padding: 7px;
+  text-align: center;
+  accent-color: coral;
+}
+input[type="radio"]{
+  width: 50px;
+  height: 50px;
+  align-self: center;
+}
+label:not(:nth-child(1)) {
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 25px;
+}
+
+#starter {
+width: 350px;
+padding: 30px;
+height: 420px;
+box-shadow: inset 0 0 15px coral;
+margin: 100px auto;
+display: grid;
+place-content: center;
+font-size: 1.5em;
+}
+#starter div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: center;
+}
+#starter .opponent {
+  flex-direction: row;
+  gap: 30px;
+}
+#starter strong{
+  margin: 25px auto;
+  font-size: 50px;
+}
+/* *********** End OF START STYLING */
+
+h1,
+#restart {
   margin: 25px auto 10px;
   padding: 15px;
   background-color: coral;
@@ -62,28 +119,51 @@ h1, #restart {
 }
 /* Styles for the game result message */
 .display {
-  font-size: 1.5em;
+  width: 100%;
+  max-width: 750px;
+  margin: auto;
+  display: flex;
+  gap: 4px;
+  /* border: 2px solid red; */
+}
+#display-main,
+.player1,
+.player2 {
+  font-weight: 600;
+  text-transform: capitalize;
   text-align: center;
-  margin: 45px auto;
+  margin: 25px auto;
   padding: 15px;
-  width: 300px;
   color: var(--main-light-clr);
-  border: 5px solid coral;
+  /* border: 5px solid coral; */
   box-shadow: inset 0 0 15px coral;
   text-shadow: 5px 5px 5px var(--main-dark-clr);
   letter-spacing: 0.1rem;
+  /* display: none; */
+}
+#display-main {
+  font-size: 1.5em;
+  width: 300px;
+  box-shadow: inset 0 0 15px coral;
+  border: 5px solid coral;
+  display: grid;
+  place-content: center;
+}
+.player1,
+.player2 {
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  box-shadow: inset 0 0 15px var(--main-dark-clr);
 }
 
-#restart {
-  min-width: 150px;
+.display span {
   font-size: 1.5em;
-  font-weight: 700;
-  border: none;
-  cursor: pointer;
-  border-radius: 5px;
 }
-#restart:active {
-  transform: scale(.9);
+
+.btn:active {
+  transform: scale(0.9);
   transition: all 150ms ease;
   box-shadow: none;
   border: 2px solid black;
@@ -91,4 +171,10 @@ h1, #restart {
 .hidden {
   /* display: none; */
   visibility: hidden;
+}
+
+@media (max-width: 500px) {
+  #display-main {
+    display: none;
+  }
 }
